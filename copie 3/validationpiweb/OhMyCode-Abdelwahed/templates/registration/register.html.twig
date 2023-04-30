@@ -1,0 +1,91 @@
+{% extends 'home.html.twig' %}
+
+{% block sidebar %}{% endblock %}
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center">Register</h1>
+
+		<div class="d-flex justify-content-center">
+
+			<div
+				class="row">
+				<!-- left column -->
+				<div
+					class="col-md-12">
+					<!-- jquery validation -->
+					<div class="card card-primary">
+					
+ 
+						<fieldset>
+							
+							{{ form_start(registrationForm ,{attr:{novalidate:'novalidate'}}) }}
+							<div class="card-body">
+								<div class="form-group">
+
+									{{ form_row(registrationForm.name,{'attr':{'class':'form-control'}}) }}
+                  
+								</div>
+								<div class="form-group">
+
+									{{ form_row(registrationForm.age,{'attr':{'class':'form-control'}}) }}
+                  
+								</div>
+								<div class="form-group">
+
+									{{ form_row(registrationForm.naissance,{'attr':{'class':'form-control'}}) }}
+                  
+								</div>
+								<div class="form-group">
+									{{ form_row(registrationForm.email,{'attr':{'class':'form-control'}}) }}
+								</div>
+							</fieldstet>
+							<div class="form-group">
+								<div class="form-group">
+									{{ form_row(registrationForm.plainPassword,{'attr':{'class':'form-control'}}) }}
+
+								</div>
+									</div >				
+									<div class="form-group">
+													{{ form_row(registrationForm.phoneNumber,{'attr':{'class':'form-control'}}) }}
+								</div >		
+							<div class="form-group">
+								{{ form_row(registrationForm.sexe) }}
+							</div>				
+          
+								
+								<div class="form-group">
+									{{ form_row(registrationForm.photo,{'attr':{'class':'form-control'}}) }}
+
+								</div>
+									
+							<div class="form-group mb-0">
+								<div class="custom-control custom-checkbox">
+									{{ form_row(registrationForm.agreeTerms) }}
+								</div>
+							</div>
+						</div>
+
+             <a href="{{path('app_login')}}">J'ai deja un compte</a>
+						<!-- /.card-body -->
+						<div class="card-footer">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+               
+						{{ form_end(registrationForm) }}
+
+            
+					</div>
+					<!-- /.card -->
+				</div>
+				<!--/.col (left) -->
+				<!-- right column -->
+				<div class="col-md-7"></div>
+				<!--/.col (right) -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container-fluid -->
+	</div>
+{% endblock %}

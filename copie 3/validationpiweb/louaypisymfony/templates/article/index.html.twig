@@ -1,0 +1,51 @@
+{% extends 'crud.html.twig' %}
+
+
+
+{% block title %}<i class="fa-solid fa-address-book"></i> liste des personne!{% endblock %}
+
+{% block content  %}
+{{parent()}}
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col"><i class="fa-solid fa-id-badge"></i> First Name</th>
+        <th scope="col">name</th>
+        <th scope="col">age</th>
+        <th scope="col">job</th>
+        <th scope="col">Action</th>
+
+       
+      </tr>
+    </thead>
+    <tbody>
+        {% for  article in article %}
+      <tr>
+        <th scope="row">{{personne.id}}</th>
+        <td>{{article.description}}</td>
+       
+        <td><a href="" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i></a>
+        <a href="" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+        <!-- <a href="{{path('personne.modify',{id:personne.id})}}" class="btn btn-success">modifier</a> -->
+        <a href="" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i></a></td>
+      </tr>
+      {% endfor   %}
+    </tbody>
+  </table>
+
+
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+  
+  
+  
+    </ul>
+    <a href="" class="btn btn-warning"><i class="fa-sharp fa-solid fa-user-plus"></i></a>
+  </nav>
+
+
+{% endblock %}
+

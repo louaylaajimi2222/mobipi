@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Controller;
+
+use App\Entity\User;
+use App\Entity\Article;
+use App\Entity\Favoris;
+use App\Entity\Produit;
+use App\Entity\Service;
+use App\Entity\Categorie;
+use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class FavorisController extends AbstractController
+{
+    #[Route('/favoris', name: 'app_favoris')]
+    public function index(): Response
+    {
+        return $this->render('favoris/index.html.twig', [
+            'controller_name' => 'FavorisController',
+        ]);
+    }
+   
+    #[Route('/ajouterf/{id}', name: 'ajouter_au_favoris')]
+    public function ajouterAuFavoris(Article $article,ManagerRegistry $doctrine): Response
+    {
+        // Récupérer l'utilisateur actuel
+        $user = $this->getUser();
+
+        // Créer un nouvel objet Favoris
+        $favori = new Favoris();
+
+        // Si l'article est un Produit, on l'ajoute au Favoris comme Produit
+        if ($article instanceof Produit) {
+            $favori->setProduit($article);
+        } 
+        // Sinon, s'il s'agit d'un Service, on l'ajoute au Favoris comme Service
+        elseif ($article instanceof Service) {
+            $favori->setService($article);
+        } 
+        // Gérer une erreur si l'article n'est ni un Produit ni un Service
+        else {
+            throw new \Exception('L\'article doit être un Produit ou un Service');
+        }
+
+        // Ajouter le Favoris à l'utilisateur
+      
+        // Enregistrer les modifications dans la base de données
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->flush();
+        $repository=$doctrine->getRepository(Categorie::class);
+        $categorie=$repository->findAll();
+        $repository=$doctrine->getRepository(Produit::class);
+        $produit=$repository->findAll();
+       
+        return $this->render('profil/article.html.twig', [
+            'categorie' => $categorie, 'produit' => $produit,
+        ]);
+    }
+}

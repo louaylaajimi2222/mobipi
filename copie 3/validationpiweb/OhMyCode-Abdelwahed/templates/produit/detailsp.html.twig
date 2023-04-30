@@ -1,0 +1,227 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>.icon-control {
+  margin-top: 5px;
+  float: right;
+  font-size: 80%;
+}
+
+
+
+.btn-light {
+  background-color: #fff;
+  border-color: #e4e4e4;
+}
+
+.list-menu {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.list-menu a {
+  color: #343a40;
+}
+
+.card-product-grid .info-wrap {
+  overflow: hidden;
+  padding: 18px 20px;
+}
+
+[class*='card-product'] a.title {
+  color: #212529;
+  display: block;
+}
+
+.card-product-grid:hover .btn-overlay {
+  opacity: 1;
+}
+.card-product-grid .btn-overlay {
+  -webkit-transition: .5s;
+  transition: .5s;
+  opacity: 0;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+  padding: 5px 0;
+  text-align: center;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+.img-wrap {
+  overflow: hidden;
+  position: relative;
+}</style>
+<!------ Include the above in your HEAD tag ---------->
+
+  <link rel="stylesheet" href="https://fontawesome.com/v4.7.0/assets/font-awesome/css/font-awesome.css">
+
+
+<div class="container">
+	<div class="row">
+	<aside class="col-md-3">
+		
+<div class="card">
+	<article class="filter-group">
+		<header class="card-header">
+			<a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+				<i class="icon-control fa fa-chevron-down"></i>
+				<h6 class="title">Product type</h6>
+			</a>
+		</header>
+		<div class="filter-content collapse show" id="collapse_1" style="">
+			<div class="card-body">
+				<form class="pb-3">
+				<div class="input-group">
+				  <input type="text" class="form-control" placeholder="Search">
+				  <div class="input-group-append">
+				    <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
+				  </div>
+				</div>
+				</form>
+				
+				<ul class="list-menu">
+				<li><a href="#">technologie  </a></li>
+				<li><a href="#">meuble </a></li>
+				<li><a href="#">sport </a></li>
+				<li><a href="#">electromenager  </a></li>
+				<li><a href="#">Home items </a></li>
+				<li><a href="#">Animals</a></li>
+				<li><a href="#">People </a></li>
+				</ul>
+
+			</div> <!-- card-body.// -->
+		</div>
+	</article> <!-- filter-group  .// -->
+	<article class="filter-group">
+		
+	
+	</article> <!-- filter-group .// -->
+	<article class="filter-group">
+		<header class="card-header">
+			
+		</header>
+		<div class="filter-content collapse show" id="collapse_3" style="">
+			<div class="card-body">
+				<div class="form-row">
+				
+				 <!-- form-row.// -->
+         <a href="{{ path('app_prod') }}" class="btn btn-primary">
+          <i class="fas fa-plus fa-fw"></i>
+          <span class="ml-2">Ajouter</span>
+        </a>
+        
+
+
+        </div><!-- card-body.// -->
+		</div>
+	</article> <!-- filter-group .// -->
+	<article class="filter-group">
+		<header class="card-header">
+			
+		</header>
+		
+	</article> <!-- filter-group .// -->
+	<article class="filter-group">
+		<header class="card-header">
+			<a href="#" data-toggle="collapse" data-target="#collapse_5" aria-expanded="false" class="">
+				<i class="icon-control fa fa-chevron-down"></i>
+				<h6 class="title">More filter </h6>
+			</a>
+		</header>
+		<div class="filter-content collapse in" id="collapse_5" style="">
+			<div class="card-body">
+				<label class="custom-control custom-radio">
+				  <input type="radio" name="myfilter_radio" checked="" class="custom-control-input">
+				  <div class="custom-control-label">Any condition</div>
+				</label>
+
+				<label class="custom-control custom-radio">
+				  <input type="radio" name="myfilter_radio" class="custom-control-input">
+				  <div class="custom-control-label">Brand new </div>
+				</label>
+
+				<label class="custom-control custom-radio">
+				  <input type="radio" name="myfilter_radio" class="custom-control-input">
+				  <div class="custom-control-label">Used items</div>
+				</label>
+
+				<label class="custom-control custom-radio">
+				  <input type="radio" name="myfilter_radio" class="custom-control-input">
+				  <div class="custom-control-label">Very old</div>
+				</label>
+			</div><!-- card-body.// -->
+		</div>
+	</article> <!-- filter-group .// -->
+</div> <!-- card.// -->
+
+	</aside>
+	<main class="col-md-9">
+
+<header class="border-bottom mb-4 pb-3">
+		<div class="form-inline">
+			<span class="mr-md-auto">32 Items found </span>
+      
+			<select class="mr-2 form-control">
+				<option>Latest items</option>
+				<option>Trending</option>
+				<option>Most Popular</option>
+				<option>Cheapest</option>
+			</select>
+			<div class="btn-group">
+				<a href="#" class="btn btn-outline-secondary" data-toggle="tooltip" title="" data-original-title="List view"> 
+					<i class="fa fa-bars"></i></a>
+				<a href="#" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="" data-original-title="Grid view"> 
+					<i class="fa fa-th"></i></a>
+			</div>
+		</div>
+</header><!-- sect-heading -->
+
+<div class="row">
+  {% for produit in produit %}
+	<div class="col-md-4">
+		<figure class="card card-product-grid">
+			<div class="img-wrap"> 
+				<span class="badge badge-danger"> NEW </span>
+								<img src="http://bootstrap-ecommerce.com/bootstrap-ecommerce-html/images/items/7.jpg" class="img-fluid">
+				<a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+			</div> <!-- img-wrap.// -->
+			<figcaption class="info-wrap">
+				<div class="fix-height">
+					
+					<div class="price-wrap mt-2">
+						<span class="price">{{produit.description}}</span>
+						<a href="#" class="title">{{produit.etat}}</a> 
+            <a href="#" class="title">{{produit.dureedevie}}</a>
+				</div>
+				<a href="#" class="btn btn-block btn-primary">Switch </a>
+			</figcaption>
+		</figure>
+	</div> <!-- col.// -->
+
+
+  {% endfor %} 
+	 
+
+	
+
+	
+
+	
+
+	
+
+<nav class="mt-4" aria-label="Page navigation sample">
+  <ul class="pagination">
+    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+
+	</main>
+	</div>
+</div>

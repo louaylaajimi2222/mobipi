@@ -1,0 +1,17 @@
+
+{% for categorie in categorie %}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="{{ path('allbycs', {id: categorie.idCategorie}) }}" role="button" data-toggle="dropdown" aria-expanded="false">
+        {{ categorie.nom }}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{{ path('allbycs', {id: categorie.idCategorie}) }}">
+            {{ categorie.nom }}
+        </a>
+    </div>
+</li>
+{% endfor %}
+</ul>
+</div>
+
+

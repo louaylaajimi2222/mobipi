@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ffffffffff
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link
+		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+		{% block stylesheets %}
+
+
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIzrEgF/CwGhoY6f5QcJStZiu6HJvoEHXw3g27OmY21J" crossorigin="anonymous">
+			<link
+			rel="canonical" href="{{asset('https://www.wrappixel.com/templates/Flexy-admin-lite/')}}"/>
+			<!-- Favicon icon -->
+			<link
+			rel="icon" type="image/png" sizes="16x16" href="{{asset('../assets/images/favicon.png')}}">
+			<!-- Custom CSS -->
+			<link href="{{asset('../assets/libs/chartist/dist/chartist.min.css')}}" rel="stylesheet">
+			<link
+			href="{{asset('../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
+			<!-- Custom CSS -->
+			<link href="{{asset('../dist2/css/style.min.css')}}" rel="stylesheet">
+			<link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+			<link rel="stylesheet" href="{{asset('../dist/css/adminlte.min.css')}}">
+			<link
+			rel="stylesheet" href="{{asset('../plugins/ekko-lightbox/ekko-lightbox.css')}}">
+
+			<!-- Bootstrap CSS -->
+			<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+			<link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+			<link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+			<link href='{{asset('https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css')}}' rel='stylesheet'>
+			<link rel="stylesheet" href="{{asset('css/style.css')}}">
+		{% endblock %}
+		{% block javascripts %}
+
+			<script src="{{asset('../assets/libs/jquery/dist/jquery.min.js')}}"></script>
+			<!-- Bootstrap tether Core JavaScript -->
+			<script src="{{asset('../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+			<script src="{{asset('../dist2/js/app-style-switcher.js')}}"></script>
+			<!--Wave Effects -->
+			<script src="{{asset('../dist2/js/waves.js')}}"></script>
+			<!--Menu sidebar -->
+			<script src="{{asset('../dist2/js/sidebarmenu.js')}}"></script>
+			<!--Custom JavaScript -->
+			<script src="{{asset('../dist2/js/custom.js')}}"></script>
+
+			<!--chartis chart-->
+			<script src="{{asset('../assets/libs/chartist/dist/chartist.min.js')}}"></script>
+			<script src="{{asset('../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
+			<script src="{{asset('../dist2/js/pages/dashboards/dashboard1.js')}}"></script>
+
+
+			<script src="{{asset('plugins/ekko-lightbox/ekko-lightbox.min.js')}}"></script>
+
+			<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+			<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+			<script src="{{asset('dist/js/adminlte.js')}}"></script>
+			<script src="{{asset('plugins/chart.js/Chart.min.js')}}"></script>
+			<script src="{{asset('dist/js/demo.js')}}"></script>
+			<script src="{{asset('dist/js/pages/dashboard3.js')}}"></script>
+
+
+			<!--This page JavaScript -->
+
+			<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+			<script src="{{asset('js/app.js')}}"></script>
+		{% endblock %}
+	</head>
+	<body>
+
+
+		{% block header %}
+
+			{#
+									    <div class="top-nav" id="home">
+									        <div class="container">
+									            <div class="row justify-content-between">
+									                <div class="col-auto">
+									                    <p> <i class="bx bxs-envelope"></i> Swapify@gmail.com</p>
+									                    <p> <i class="bx bxs-phone-call"></i> (217) 55 817 815</p>
+									                </div>
+									                <div class="col-auto social-icons">
+									                    <a href="https://www.facebook.com/abdou.souid.10/"><i class="bx bxl-facebook"></i></a>
+									                    <a href="#"><i class="bx bxl-twitter"></i></a>
+									                    <a href="#"><i class="bx bxl-instagram"></i></a>
+									                    <a href="#"><i class="bx bxl-pinterest"></i></a>
+									                </div>
+									            </div>
+									        </div>
+									    </div> #}
+
+
+			<!-- ============================================================== -->
+			<!-- toggle and nav items -->
+			<!-- ============================================================== -->
+
+			<!-- ============================================================== -->
+			<!-- Right side toggle and nav items -->
+			<!-- ============================================================== -->
+
+
+			<!-- BOTTOM NAV -->
+		{%	block content %}
+			<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top  top-navbar navbar-expand-md "> <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+				<div class="container">
+
+					<a class="navbar-brand">Swapify<span class="dot">.</span>
+					</a>
+
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<ul class="navbar-nav float-start me-auto">
+						<!-- ============================================================== -->
+						<!-- Search -->
+						<!-- ============================================================== -->
+							<li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
+								<i class="mdi mdi-magnify me-1"></i>
+								<span class="font-16">Search</span>
+							</a>
+							<form class="app-search position-absolute" style="display: none;">
+								<input type="text" class="form-control" placeholder="Search &amp; enter">
+								<a class="srh-btn">
+									<i class="mdi mdi-window-close"></i>
+								</a>
+							</form>
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<center>
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('app_home')}}">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#about">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#services">Services</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#portfolio">Portfolio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#team">Team</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#reviews">Reviews</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#blog">Blog</a>
+							</li>
+							{#<li class="nav-item">
+																													<a class=" nav-item btn btn-brand " href="{{path('article')}}">Mon compte</a>
+																												</li> #}
+						</ul>
+
+					</center>
+					<style>
+						.image-cercle-petite {
+							width: 50px; /* taille de l'image */
+							height: 50px;
+							border-radius: 50%; /* crée l'effet de cercle */
+							object-fit: cover; /* ajuste l'image pour qu'elle remplisse la zone de forme */
+						}
+					</style>
+
+					<ul class="navbar-nav float-end ">
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+
+						<!-- ============================================================== -->
+							<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								{% if app.user %}
+
+									{% if app.user.photo %}
+										{#<a class="nav-link">{{ app.user.name }}</a>#}
+					
+											<img src="{{ asset('uploads/photos/' ~ app.user.photo ~ '.jpg') }}" alt="{{ app.user.name }}" class="image-cercle-petite" width="31">
+								
+									{% else %}
+										<img src="../assets/images/users/profile.png" alt="user" class="image-cercle-petite" width="31">
+									{% endif %}
+								{% endif %}
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="{{path('app_profil')}}">
+									<i class="ti-user m-r-5 m-l-5"></i>
+									My Profile</a>
+								<a class="dropdown-item" href="">
+									<i class="ti-email m-r-5 m-l-5"></i>
+									Notifications</a>
+								<a class="dropdown-item " href="{{path('app_logout')}}">
+									<i class="ti-power-off m-r-5 m-l-5"></i>
+									Log out</a>
+							</ul>
+						</li>
+						<!-- ============================================================== -->
+					<!-- User profile and search -->
+						<!-- ============================================================== -->
+					</li>
+				</ul>
+
+
+			</div>
+
+		</div>
+	</body>
+</html>
+</nav>
+			
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+  
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto mx-auto">
+			{% for categorie in categorie %}
+			{% if categorie.type == 'produit' %}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="{{ path('allbycs', {id: categorie.idCategorie}) }}" role="button" data-toggle="dropdown" aria-expanded="false">
+            {{ categorie.nom }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path('allbycs', {id: categorie.idCategorie}) }}">
+                {{ categorie.nom }}
+            </a>
+        </div>
+    </li>
+{% else %}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="{{ path('allby', {id: categorie.idCategorie}) }}" role="button" data-toggle="dropdown" aria-expanded="false">
+            {{ categorie.nom }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ path('allby', {id: categorie.idCategorie}) }}">
+                {{ categorie.nom }}
+            </a>
+        </div>
+    </li>
+{% endif %}
+
+			{% endfor %}
+		</ul>
+	</div>
+	
+	
+	
+  </nav>
+			{% endblock %}
+			<!-- ABOUT -->
+			
+			<!-- MILESTONE -->
+			<section id="milestone">
+				<div class="container">
+					<style>/* Réinitialisation des styles */
+						html,
+						body {
+						  width: 100%;
+						  height: 100%;
+						}
+						
+						/* Container principal */
+						.container {
+						  padding: 75px 0;
+						  margin: 0 auto;
+						  width: 1140px;
+						}
+						
+						/* Titre principal */
+						h1 {
+						  position: relative;
+						  margin-bottom: 45px;
+						  font-family: 'Oswald', sans-serif;
+						  font-size: 44px;
+						  text-transform: uppercase;
+						  color: #424242;
+						}
+						
+						/* Conteneur de la galerie d'images */
+						.gallery-wrap {
+						  display: flex;
+						  flex-direction: row;
+						  width: 100%;
+						  height: 70vh;
+						}
+						
+						/* Images individuelles */
+						.item {
+						  flex: 1;
+						  height: 100%;
+						  background-position: center;
+						  background-size: cover;
+						  background-repeat: none;
+						  transition: flex 0.8s ease;
+						}
+						
+						/* Survol des images */
+						.item:hover {
+						  flex: 7;
+						}
+						
+						/* Images individuelles */
+						.item-1 {
+						  background-image:url('https://img.freepik.com/photos-premium/dispositifs-techniques-icones-connectes-planete-terre-numerique_117023-449.jpg')
+						}
+						
+						.item-2 {
+						  background-image: url('https://www.meubles-ecureuil.be/uploads/_CGSmartImage/img-5f9d351d87cd8e146efbee58ddabcfb8.jpg');
+						}
+						
+						.item-3 {
+						  background-image: url('https://img.freepik.com/photos-gratuite/homme-technicien-electricien-travaillant-dans-standard-fusibles_169016-24062.jpg?w=2000');
+						}
+						
+						.item-4 {
+						  background-image: url('https://img.freepik.com/photos-gratuite/outils-bricolage_144627-32164.jpg');
+						}
+						
+						.item-5 {
+						  background-image: url('https://media.istockphoto.com/id/1174598609/fr/photo/ensemble-dappareils-m%C3%A9nagers-contemporains-isol%C3%A9s-sur-le-blanc.jpg?s=612x612&w=0&k=20&c=Wbt02IcOoG0TL3hkHCjH1p2-8vGvozaEPNhLAxuNuX8=');
+						}
+						
+						/* Liens de réseaux sociaux */
+						.social {
+						  position: absolute;
+						  right: 35px;
+						  bottom: 0;
+						}
+						
+						.social img {
+						  display: block;
+						  width: 32px;
+						}
+						</style>
+					<h1>Gallery</h1>
+				  
+					<div class="gallery-wrap">
+					  <div class="item item-1"></div>
+					  <div class="item item-2"></div>
+					  <div class="item item-3"></div>
+					  <div class="item item-4"></div>
+					  <div class="item item-5"></div>
+					</div>
+				   </div>
+				  
+				  <div class="social">
+					<a href="" target="_blank">
+					  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/149103/twitter.svg" alt="">
+					</a>
+				  </div>
+			</section>
+			
+			<section id="services" class="text-center">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="intro">
+								<h6>Our Services</h6>
+								<h1>What We Do?</h1>
+								<p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+																roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			
+			<section class="bg-light" id="portfolio">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="intro">
+								<h6>Work</h6>
+								<h1>Successful projects</h1>
+								<p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+																roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="projects-slider" class="owl-theme owl-carousel">
+					<div class="project">
+						<div class="overlay"></div>
+						<img src="img/project1.jpg" alt="">
+						<div class="content">
+							<h2>Consulting Marketing</h2>
+							<h6>Website Design</h6>
+						</div>
+					</div>
+					<div class="project">
+						<div class="overlay"></div>
+						<img src="img/project2.jpg" alt="">
+						<div class="content">
+							<h2>Consulting Marketing</h2>
+							<h6>Website Design</h6>
+						</div>
+					</div>
+					<div class="project">
+						<div class="overlay"></div>
+						<img src="img/project3.jpg" alt="">
+						<div class="content">
+							<h2>Consulting Marketing</h2>
+							<h6>Website Design</h6>
+						</div>
+					</div>
+					<div class="project">
+						<div class="overlay"></div>
+						<img src="img/project4.jpg" alt="">
+						<div class="content">
+							<h2>Consulting Marketing</h2>
+							<h6>Website Design</h6>
+						</div>
+					</div>
+					<div class="project">
+						<div class="overlay"></div>
+						<img src="img/project5.jpg" alt="">
+						<div class="content">
+							<h2>Consulting Marketing</h2>
+							<h6>Website Design</h6>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section id="team">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="intro">
+								<h6>Team</h6>
+								<h1>Team Members</h1>
+								<p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+																roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center">
+						<div class="col-lg-4 col-md-8">
+							<div class="team-member">
+								<div class="image">
+									<img src="img/team_1.jpg" alt="">
+									<div class="social-icons">
+										<a href="#">
+											<i class='bx bxl-facebook'></i>
+										</a>
+										<a href="#">
+											<i class='bx bxl-twitter'></i>
+										</a>
+										<a href="#">
+											<i class='bx bxl-instagram'></i>
+										</a>
+										<a href="#">
+											<i class='bx bxl-pinterest'></i>
+										</a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+			
+								<h5>Marvin McKinney</h5>
+								<p>Marketing Coordinator</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-8">
+							<div class="team-member">
+								<div class="image">
+									<img src="img/team_2.jpg" alt="">
+									<div class="social-icons">
+										<a href="#">
+											<i class='bx bxl-facebook'></i>
+										</a>
+										<a href="#">
+											<i class='bx bxl-twitter'></i>
+										</a>
+										<a href="#">
+											<i class='bx bxl-instagram'></i>
+										</a>
+										<a href="#">
+											<i class='bx bxl-pinterest'></i>
+										</a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+			
+								<h5>Kathryn Murphy</h5>
+								<p>Ethical Hacker</p>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-8">
+							<div class="team-member">
+								<div class="image">
+									<img src="img/team_3.jpg" alt="">
+									<div class="social-icons">
+										<a href="#">
+											<i class='bx bxl-facebook'></i>
+										</a>
+										<a href="#">
+											<i class='bx bxl-twitter'></i>
+										</a>
+										<a href="#">
+											<i class='bx bxl-instagram'></i>
+										</a>
+										<a href="#">
+											<i class='bx bxl-pinterest'></i>
+										</a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+			
+								<h5>Darrell Steward</h5>
+								<p>Software Developer</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="bg-light" id="reviews">
+			
+				<div class="owl-theme owl-carousel reviews-slider container">
+					<div class="review">
+						<div class="person">
+							<img src="img/team_1.jpg" alt="">
+							<h5>Ralph Edwards</h5>
+							<small>Market Development Manager</small>
+						</div>
+						<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut quis, rem culpa labore voluptate
+												ullam! In, nostrum. Dicta, vero nihil. Delectus minus vitae rerum voluptatum, excepturi incidunt ut,
+												enim nam exercitationem optio ducimus!</h3>
+						<div class="stars">
+							<i class='bx bxs-star'></i>
+							<i class='bx bxs-star'></i>
+							<i class='bx bxs-star'></i>
+							<i class='bx bxs-star'></i>
+							<i class="bx bxs-star-half"></i>
+						</div>
+						<i class='bx bxs-quote-alt-left'></i>
+					</div>
+					<div class="review">
+						<div class="person">
+							<img src="img/team_2.jpg" alt="">
+							<h5>Ralph Edwards</h5>
+							<small>Market Development Manager</small>
+						</div>
+						<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut quis, rem culpa labore voluptate
+												ullam! In, nostrum. Dicta, vero nihil. Delectus minus vitae rerum voluptatum, excepturi incidunt ut,
+												enim nam exercitationem optio ducimus!</h3>
+						<div class="stars">
+							<i class='bx bxs-star'></i>
+							<i class='bx bxs-star'></i>
+							<i class='bx bxs-star'></i>
+							<i class='bx bxs-star'></i>
+							<i class="bx bxs-star-half"></i>
+						</div>
+						<i class='bx bxs-quote-alt-left'></i>
+					</div>
+					<div class="review">
+						<div class="person">
+							<img src="img/team_3.jpg" alt="">
+							<h5>Ralph Edwards</h5>
+							<small>Market Development Manager</small>
+						</div>
+						<h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut quis, rem culpa labore voluptate
+												ullam! In, nostrum. Dicta, vero nihil. Delectus minus vitae rerum voluptatum, excepturi incidunt ut,
+												enim nam exercitationem optio ducimus!</h3>
+						<div class="stars">
+							<i class='bx bxs-star'></i>
+							<i class='bx bxs-star'></i>
+							<i class='bx bxs-star'></i>
+							<i class='bx bxs-star'></i>
+							<i class="bx bxs-star-half"></i>
+						</div>
+						<i class='bx bxs-quote-alt-left'></i>
+					</div>
+				</div>
+			</section>
+			
+			<section id="blog">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="intro">
+								<h6>Blog</h6>
+								<h1>Blog Posts</h1>
+								<p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+																roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<article class="blog-post">
+								<img src="img/project5.jpg" alt="">
+								<a href="#" class="tag">Web Design</a>
+								<div class="content">
+									<small>01 Dec, 2022</small>
+									<h5>Web Design trends in 2022</h5>
+									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+																		piece of classical Latin literature from</p>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-4">
+							<article class="blog-post">
+								<img src="img/project4.jpg" alt="">
+								<a href="#" class="tag">Programming</a>
+								<div class="content">
+									<small>01 Dec, 2022</small>
+									<h5>Web Design trends in 2022</h5>
+									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+																		piece of classical Latin literature from</p>
+								</div>
+							</article>
+						</div>
+						<div class="col-md-4">
+							<article class="blog-post">
+								<img src="img/project2.jpg" alt="">
+								<a href="#" class="tag">Marketing</a>
+								<div class="content">
+									<small>01 Dec, 2022</small>
+									<h5>Web Design trends in 2022</h5>
+									<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+																		piece of classical Latin literature from</p>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
+<footer class="footer text-center">
+	All Rights Reserved by Flexy Admin. Designed and Developed by
+	<a href="https://www.wrappixel.com">WrapPixel</a>.
+</footer>{% endblock %}
+<!-- ============================================================== -->
+
+</body></html>

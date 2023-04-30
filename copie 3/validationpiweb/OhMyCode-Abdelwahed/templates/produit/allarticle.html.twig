@@ -1,0 +1,320 @@
+{% extends 'home.html.twig' %}
+{% block body %}
+{% block content  %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Shop</title>
+        <meta charset="utf-8">
+        <link href="MyShop.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+
+
+    <body>
+      <style>*{
+        box-sizing: border-box;
+        font-family: 'Lato', sans-serif;
+      }
+      
+      
+      .header{
+        background-color: rgb(212, 232, 248);
+        position: fixed;
+        top:0px;
+        left:0px;
+        width: 100%;
+        height: 70px;
+        z-index: 3;
+      }
+      
+      .header h3{
+        line-height: 30px;
+        color: slategrey;
+        padding: 20px;
+        float: left;
+        margin: 0;
+      }
+      
+      .header h3:hover, .header h3.active{
+        color: black;
+        background-color: white;
+      }
+      
+      .header img{
+        position: absolute;
+        top:0;
+        left: 40%;
+        width: 280px;
+        height: 70px;
+      }
+      
+      .navbar{
+        background-color: white;
+        position: fixed;
+        top:70px;
+        left: 0px;
+        height: 50px;
+        width: 100%;
+        box-shadow: 0 0 10px 0 rgb(212, 232, 248);
+        z-index: 2;
+      }
+      
+      .navbar ul{
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+        margin: 0;
+      }
+      
+      .navbar ul li{
+        padding: 15px;
+        line-height: 20px;
+      }
+      
+      .navbar ul li.active a, .navbar ul a:hover {
+        color: hotpink;
+      }
+      .navbar a{
+        text-decoration: none;
+        color: black;
+      }
+      
+      .search-box{
+        position: fixed;
+        top:75px;
+        right: 20px;
+        height: 40px;
+        border-radius: 40px;
+        padding: 10px;
+        background: rgb(212, 232, 248);
+        z-index: 2;
+      }
+      
+      .search-btn{
+        color: black;
+        float: right;
+        width: 20px;
+        height: 40px;   
+      }
+      
+      .search-txt{
+        border: none;
+        background: none;
+        float: left;
+        padding: 0;
+        color: black;
+        font-size: 16px;
+      }
+      
+      .sidebar{
+        position: fixed;
+        top: 120px;
+        left: 0;
+        bottom: 0;
+        overflow: auto;
+        border-right: 3px solid rgb(212, 232, 248);
+        width: 200px;
+        background: white;
+        z-index: 1;
+      }
+      
+      .filter, .subfilter{
+        list-style: none;
+        line-height: 2;
+        padding-left: 30px;
+      }
+      
+      .subfilter{
+        color: slategray;
+        padding-left: 0;
+      }
+      
+      .container{
+        position: relative;
+        top: 120px;
+        left:200px;
+        width: 85%;
+      }
+      
+      #sort{
+        position: absolute;
+        top: 10px;
+        right:25px;
+      }
+      
+      .catalogue{
+        position: absolute;
+        top: 40px;
+        left:15px;
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .products{
+        height: 300px;
+        width: 200px;
+        margin: 10px;
+      
+      }
+      
+      .products:hover{
+        box-shadow: 0 0 2px 0 rgb(184, 180, 180);
+        border-radius: 2px;
+      }
+      
+      .products a{
+        display: block;
+        text-decoration: none;
+        color: black;
+      }
+      
+      .products img{
+        height: 250px;
+        width: 100%;
+      }
+      
+      .products .price{
+        color: hotpink;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
+      .products .mrp{
+        font-size: 14px;
+        text-decoration: line-through;
+        margin-left: 5px;
+      }
+      
+      .products i{
+        font-size: 16px;
+        float: right;
+      }
+      </style>
+       
+
+      
+
+        
+   
+        <div class="sidebar">
+            <ul class="filter">
+                <li>Category</li>
+                <li>Style
+                    <ul class="subfilter">
+                        <li><input type="checkbox">sport</li>
+                        <li><input type="checkbox">technologie</li>
+                        <li><input type="checkbox">meuble</li>
+                        <li><input type="checkbox">electromenager</li>
+                        <li><input type="checkbox">repataion chaud&froid</li>
+                        <li><input type="checkbox">electricite</li>
+                    </ul>
+                </li>
+                <li>Color
+                    <ul class="subfilter">
+                        <li><input type="checkbox">Black</li>
+                        <li><input type="checkbox">White</li>
+                        <li><input type="checkbox">Pink</li>
+                        <li><input type="checkbox">Red</li>
+                        <li><input type="checkbox">Blue</li>
+                        <li><input type="checkbox">Orange</li>
+                    </ul>
+                </li>
+                <li>Type</li>
+                <li>Size</li>
+                <li>Pattern Type</li>
+                <li>Length</li>
+            </ul>
+        </div>
+        <html>
+  <body>
+    <h3>Bouton glyphicon </h3>
+    <div class="container">
+      <button class="btn btn-green">
+        <span class="glyphicon glyphicon glyphicon-leaf">
+        </span> click me
+      </button>
+      <button class="btn btn-pomegranate">
+          <span class="glyphicon glyphicon-heart">
+          </span> Like 
+      </button>
+        <button class="btn btn-pumpkin">
+        <span class="   glyphicon glyphicon-plus">
+        </span> Add
+      </button>
+      <button class="btn btn-Picton_Blue">
+        <span class="   glyphicon glyphicon-user border">
+        </span> sign in
+      </button>
+      <button class="btn btn-Lynch">
+        <span class="   glyphicon glyphicon-trash">
+        </span> Delete  
+      </button>
+    </div>
+    <div class="container">
+      <div class="btn-group btn-groupe_1">
+        <button type="button" class="btn btn-cabaret">Watch</button>
+        <button type="button"class="btn btn-cabaret_2">
+          <span class="glyphicon glyphicon-eye-open"></span>
+        </button>
+      </div>
+      <div class="btn-group btn-groupe_2">
+        <button type="button" class="btn btn-honey_flower">Buy</button>
+        <button type="button"class="btn btn-honey_flower_2">
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+        </button>
+      </div>
+      <div class="btn-group btn-groupe_3">
+        <button type="button" class="btn btn-Crusta">Listen music</button>
+        <button type="button"class="btn btn-Crusta_2">
+          <span class="glyphicon glyphicon-headphones"></span>
+        </button>
+      </div>
+      <div class="btn-group btn-groupe_4">
+        <button type="button" class="btn btn- btn-Caribbean_Green">Travel</button>
+        <button type="button"class="btn btn-Caribbean_Green_2">
+          <span class="   glyphicon glyphicon-plane"></span>
+        </button>
+      </div>
+    </div>
+    {% endblock%}
+  </body>
+</html>
+
+        <div class="container">
+
+            <div id="sort">Sort By
+                <select>
+                    <option>Recommend</option>
+                    <option>Most Popular</option>
+                    <option>New Arrivals</option>
+                    <option>Price Low to High</option>
+                    <option>Price High to Low</option>
+
+                </select>
+            </div>
+            
+            <div class="catalogue" style="display: inline-block;">
+{% for produit in produit %}
+                <div class="products">
+                    <img src="https://img.ltwebstatic.com/origin/images2_pi/2018/07/09/15311256221214541777_im_405x552.jpg"/><br/>
+                    <a href="#">{{produit.nom}}</a>
+                    <span class="price">{{produit.description}}</span>
+                    <span class="mrp"></span>
+                    <i class="far fa-heart"></i>
+                </div>
+                
+                {% endfor %} 
+                
+            </div>
+           
+        </div>
+
+    </body>
+   
+
+</html>
+
+{% endblock%}

@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+app_services_by_category:
+    path: '/services/{category}'
+    controller: 'App\Controller\ServiceController::getServicesByCategory'
+    methods: ['GET']

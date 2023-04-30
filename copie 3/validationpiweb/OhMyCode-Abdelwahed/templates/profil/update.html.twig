@@ -1,0 +1,135 @@
+{% extends 'home.html.twig' %}
+{% block body%}
+
+	<!-- ============================================================== -->
+	<div class="preloader">
+		<div class="lds-ripple">
+			<div class="lds-pos"></div>
+			<div class="lds-pos"></div>
+		</div>
+	</div>
+	
+	<!-- ============================================================== -->
+	<!-- Main wrapper - style you can find in pages.scss -->
+	<!-- ============================================================== -->
+		<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full"> <div class="page-wrapper">
+			<!-- ============================================================== -->
+			<!-- Bread crumb and right sidebar toggle -->
+			<!-- ============================================================== -->
+				<div class="page-breadcrumb"> <div class="row align-items-center">
+					<div class="col-6">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 d-flex align-items-center">
+								<li class="breadcrumb-item">
+									<a href="index.html" class="link">
+										<i class="mdi mdi-home-outline fs-4"></i>
+									</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Profile</li>
+							</ol>
+						</nav>
+						<h1 class="mb-0 fw-bold">Profile</h1>
+					</div>
+
+				</div>
+			</div>
+			<!-- ============================================================== -->
+			<!-- End Bread crumb and right sidebar toggle -->
+			<!-- ============================================================== -->
+			<!-- ============================================================== -->
+			<!-- Container fluid  -->
+			<!-- ============================================================== -->
+				<div class="container-fluid"> <!-- ============================================================== -->
+				<!-- Start Page Content -->
+				<!-- ============================================================== -->
+				<!-- Row -->
+					<div
+					class="row"> <!-- Column -->
+					<div class="col-lg-3 col-xlg3 col-md-3">
+						<div class="card">
+							<div class="card-body">
+								<center class="m-t-30">
+									<img src="{{ asset('uploads/photos/' ~ app.user.photo)}}" class="rounded-circle" width="150"><br><br>
+									<h4 class="card-title m-t-10">{{app.user.name}}</h4>
+								</center>
+							</div>
+							<div>
+								<hr>
+							</div>
+							<div class="card-body">
+								<small class="text-muted p-t-30 db">Email address</small>
+							  <h6>{{app.user.email}}</h6>
+							<br></br>
+						<small class="text-muted p-t-30 db">Phone</small>
+						<h6>{{app.user.phoneNumber}}</h6>
+						<small class="text-muted p-t-30 db">Address</small>
+						<h6>71 Pilgrim Avenue Chevy Chase, MD 20815</h6>
+						<small class="text-muted p-t-30 db">Social Profile</small>
+						<br>
+						<button class="btn btn-circle btn-secondary">
+							<i class="fab fa-facebook-f"></i>
+						</button>
+						<button class="btn btn-circle btn-secondary">
+							<i class="fab fa-twitter"></i>
+						</button>
+						<button class="btn btn-circle btn-secondary">
+							<i class="fab fa-youtube"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- Column -->
+			<!-- Column -->
+			<div class="col-lg-8 col-xlg-10 col-md-7">
+				<div class="card">
+					<div class="card-body">
+						{{ form_start(registrationForm ,{attr:{novalidate:'novalidate form-horizontal form-material mx-2'}}) }}
+
+						<div class="form-group">
+
+							<div class="col-md-12">
+								{{ form_row(registrationForm.name,{'attr':{'class':'form-control form-control-line'}}) }}
+							</div>
+						</div>
+						<div class="form-group">
+
+							<div class="col-md-12">
+								{{ form_row(registrationForm.email,{'attr':{'class':'form-control form-control-line'}}) }}
+
+							</div>
+						</div>
+						<div class="form-group">
+
+							<div class="col-md-12">
+								{{ form_row(registrationForm.plainPassword,{'attr':{'class':'form-control form-control-line'}}) }}
+							</div>
+						</div>
+						<div class="form-group">
+
+							<div class="col-md-12">
+								{{ form_row(registrationForm.phoneNumber,{'attr':{'class':'form-control form-control-line'}}) }}
+							</div>
+						</div>
+						<div class="form-group">
+
+							<div class="col-md-12">
+								{{ form_row(registrationForm.photo,{'attr':{'class':'form-control form-control-line'}}) }}
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12">
+								<button class="btn btn-success text-white">Update Profile</button>
+							</div>
+						</div>
+						{{ form_end(registrationForm) }}
+					</div>
+				</div>
+			</div>
+			<!-- Column -->
+		</div>
+
+	</div>
+
+</div>
+<!-- ============================================================== --></div><!-- ============================================================== --><!-- End Page wrapper  --><!-- ============================================================== --></div>{% endblock %}
+

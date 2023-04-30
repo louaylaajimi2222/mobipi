@@ -1,0 +1,191 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}details  des personne!{% endblock %}
+
+{% block content  %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+ 
+	<title>Ma vitrine</title>
+  <script>var cards = [
+    {"image":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg", 
+    "title":"Burgundy Flemming", 
+    "subtitle":"Advertising"},
+   {"image":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample119.jpg", 
+    "title":"Nigel Nigel", 
+    "subtitle":"Sound & Vision"},
+   {"image":"https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample120.jpg", 
+    "title":"Caspian Bellevedere", 
+    "subtitle":"Accounting"}
+ ];
+ var Article = React.createClass({
+   render: function() {
+     var image = this.props.data.image,
+         title = this.props.data.title,
+         subtitle = this.props.data.subtitle;
+     return (
+       <figure className="snip1584">
+         <img src={image} />
+         <figcaption>
+           <h3>{title}</h3>
+           <h5>{subtitle}</h5>
+         </figcaption><a href="#"></a>
+       </figure>
+     )
+   }
+ });
+ var News = React.createClass({
+   render: function() {
+     var data = this.props.data;
+     var newsTemplate;
+     var settings = {
+       dots: true,
+       infinite: true,
+       slidesToShow: 3,
+       slidesToScroll: 1,
+     }
+     if (data.length > 0) {
+       newsTemplate = data.map(function(item, index) {
+         return (
+             <div key={index}>
+               <Article data={item} />
+             </div>
+         )
+       })
+     } else {
+       newsTemplate = <p>Please add some cards</p>
+     }
+     return (
+       <div className='news'>
+         <Slider {...settings}>{newsTemplate}</Slider>
+         <strong className={'news__count ' + (data.length > 0 ? '':'none') }>
+           Total cards: {data.length}
+         </strong>
+       </div>
+     );
+   }
+ });
+ var App = React.createClass({
+   render: function() {
+     
+     return (
+       <div className='app'>
+         <h3>Cards</h3>
+         <News data={cards} />
+       </div>
+     );
+   }
+ });
+ ReactDOM.render(
+   <App />,document.getElementById('root')
+ );</script>
+	
+<style>
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.card__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card__text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.card__button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.card__image {
+  height: 400px;
+  width: 300px;
+  background-color: #000;
+  /* you can put img url here  */
+}
+
+
+
+
+
+</style>
+<script></script>
+</head>
+<body>
+
+
+	
+  
+</body>
+</html>
+
+
+ 
+ {% for produit in produit %}
+ <div class="card">
+  <div class="card__image">
+    
+  </div>
+  <div class="card__content">
+    
+
+
+    <p class="card__title">{{produit.nom}}</p>
+    <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <a class="card__button" href="{{ path('allbycs', {id: produit.idArticle}) }}">details</a>
+  </div>
+</div>
+
+ {% endfor %} 
+       
+  
+           
+
+ 
+  
+
+{% endblock %}

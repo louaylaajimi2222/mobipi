@@ -1,0 +1,25 @@
+{% extends 'home.html.twig' %}
+
+{% block title %}ajouter une personne   des personne!{% endblock %}
+
+{% block content  %}
+
+<div class="container">
+    <h2>Ajouter un produit </h2>
+
+    {{ form_start(form, { 'attr': {'class': 'form'} }) }}
+    
+        <div class="form-group">
+            {{ form_label(form.description, 'Description') }}
+            {{ form_widget(form.description, { 'attr': {'class': 'form-control'} }) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-primary'} }) }}
+        </div>
+
+    {{ form_end(form) }}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'home.html.twig' %}
+
+{% block sidebar %}{% endblock %}
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-center">Register</h1>
+
+		<div class="d-flex justify-content-center">
+
+			<div
+				class="row">
+				<!-- left column -->
+				<div
+					class="col-md-12">
+					<!-- jquery validation -->
+					<div class="card card-primary">
+						<div class="card-header"></div>
+						<!-- /.card-header -->
+						<!-- form start -->
+<script>// Récupérez le champ d'upload de photo et l'élément d'image
+const photoInput = document.querySelector('#registration_form_photo');
+const photoPreview = document.querySelector('#preview');
+
+// Ajoutez un écouteur d'événement pour le changement de valeur du champ d'upload de photo
+photoInput.addEventListener('change', function() {
+  // Vérifiez si un fichier a été sélectionné
+  if (photoInput.files && photoInput.files[0]) {
+    // Créez un objet URL pour le fichier sélectionné
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      photoPreview.setAttribute('src', e.target.result);
+    }
+    reader.readAsDataURL(photoInput.files[0]);
+  }
+});</script>
+						<fieldset>
+							<legend>
+								Mon identité</legend>
+							{{ form_start(registrationForm ,{attr:{novalidate:'novalidate'}}) }}
+							<div class="card-body">
+								<div class="form-group">
+
+									{{ form_row(registrationForm.name,{'attr':{'class':'form-control'}}) }}
+                  
+								</div>
+								<div class="form-group">
+									{{ form_row(registrationForm.email,{'attr':{'class':'form-control'}}) }}
+
+								</div>
+
+							</fieldstet>
+							<div class="form-group">
+								<div class="form-group">
+									{{ form_row(registrationForm.plainPassword,{'attr':{'class':'form-control'}}) }}
+
+								</div>
+
+									</div >				
+									<div class="form-group">
+													{{ form_row(registrationForm.phoneNumber,{'attr':{'class':'form-control'}}) }}
+								</div >		
+							<div class="form-group">
+								{{ form_row(registrationForm.sexe) }}
+							</div>
+							
+
+							<div class="form-group">
+								
+    {{ form_row(registrationForm.photo, { 'attr': {'id': 'registration_form_photo'} }) }}
+
+{#<img id="preview" src="#" alt="Photo de profil">#}
+
+							</div>
+							<div class="form-group mb-0">
+								<div class="custom-control custom-checkbox">
+									{{ form_row(registrationForm.agreeTerms) }}
+								</div>
+							</div>
+						</div>
+
+             <a href="{{path('app_login')}}">J'ai deja un compte</a>
+						<!-- /.card-body -->
+						<div class="card-footer">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+               
+						{{ form_end(registrationForm) }}
+
+            
+					</div>
+					<!-- /.card -->
+				</div>
+				<!--/.col (left) -->
+				<!-- right column -->
+				<div class="col-md-7"></div>
+				<!--/.col (right) -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.container-fluid -->
+	</div>
+{% endblock %}
